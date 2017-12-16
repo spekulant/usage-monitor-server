@@ -1,0 +1,18 @@
+web:
+  image: registry.gitlab.com/spekulant/socketio-allfiles/web:master
+  command: "node ws.js"
+  links:
+    - elasticsearch:elasticsearch
+
+elasticsearch:
+  image: rancher/dns-service
+  external_links:
+  - es-cluster/es-client:elasticsearch
+
+nginx:
+  image: registry.gitlab.com/spekulant/socketio-allfiles/nginx:master
+  labels:
+    - "label io.rancher.container.network=true"
+  links:
+    - web:web
+    - elasticsearch:elasticsearch

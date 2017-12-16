@@ -1,0 +1,10 @@
+web:
+  build: web/
+  command: "node ws.js"
+
+nginx:
+  build: nginx/
+  links:
+    - web:web
+  ports:
+    - 80:80
