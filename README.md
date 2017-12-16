@@ -1,5 +1,5 @@
-# utility-monitor server
-A tool meant to broadcast `json` packages sent over WebSocket from connected client applications emitting host utility information (repo: `utility-monitor-client`) to the WebSocket clients connected to the server i.e. frontend application. While bradcasting, the app also pushes the packages to the elasticsearch cluster as new documents for data persistency.
+# usage-monitor server
+A tool meant to broadcast `json` packages sent over WebSocket from connected client applications emitting host utility information (repo: `usage-monitor-client`) to the WebSocket clients connected to the server i.e. frontend application. While bradcasting, the app also pushes the packages to the elasticsearch cluster as new documents for data persistency.
 
 ## Basic setup
 * (optional) change elasticsearch cluster address `db_address` in the `web/ws.js` file
